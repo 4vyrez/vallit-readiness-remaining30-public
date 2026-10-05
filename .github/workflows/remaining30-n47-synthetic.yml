@@ -1,0 +1,14 @@
+name: Remaining30 N47 synthetic CI
+on:
+  pull_request:
+    branches: ['codex/remaining30-n47-base-20261006']
+    types: [opened]
+permissions: {}
+jobs:
+  deliberate_failure:
+    if: github.head_ref == 'codex/remaining30-n47-ci-failed-20261006'
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    steps:
+      - name: Expected failure for N47 provider evidence
+        run: exit 1
