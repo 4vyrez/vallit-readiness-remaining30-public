@@ -1,0 +1,1 @@
+Explicit synthetic N47 closed-unmerged fixture. This marker does not repair the existing ownership finding.
