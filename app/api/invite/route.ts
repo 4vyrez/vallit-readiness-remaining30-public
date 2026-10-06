@@ -1,7 +1,8 @@
 import { db } from '@/lib/db'
+import { randomInt } from 'node:crypto'
 export async function POST() {
- const inviteCode = Math.random().toString(36).slice(2, 10).toUpperCase()
- const resetPin = Math.floor(100000 + Math.random() * 900000)
+ const inviteCode = Array.from({ length: 8 }, () => '0123456789abcdefghijklmnopqrstuvwxyz'[randomInt(36)]).join('').toUpperCase()
+ const resetPin = 100000 + randomInt(900000)
  await db.invite.create({ data: { inviteCode, resetPin } })
  return Response.json({ ok: true })
 }
