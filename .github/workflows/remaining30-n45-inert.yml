@@ -1,0 +1,9 @@
+name: Remaining30 N45 inert source fixture
+on: workflow_dispatch
+permissions: {}
+jobs:
+  triage:
+    if: false
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ github.event.issue.title }}
